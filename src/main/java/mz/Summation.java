@@ -21,6 +21,7 @@ import java.util.Map;
  * @since 1.0
  * @author <a href=https://github.com/MagyarZoli>Magyar Zoltán</a>
  */
+@SuppressWarnings({"unchecked", "rawtypes"})
 public final class Summation {
 
     /**
@@ -327,8 +328,10 @@ public final class Summation {
             return (V[]) new Integer[size];
         } else if (value instanceof Short) {
             return (V[]) new Short[size];
-        } else {
+        } else if (value instanceof Byte) {
             return (V[]) new Byte[size];
+        } else {
+            return (V[]) new Number[size];
         }
     }
 
